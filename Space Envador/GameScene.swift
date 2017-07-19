@@ -49,7 +49,6 @@ class GameScene: SKScene {
         swipeRight.direction = .right
         
         view.addGestureRecognizer(swipeRight)
-
         
         
         
@@ -95,7 +94,18 @@ class GameScene: SKScene {
         
         actionMove = SKAction.move(to: CGPoint(x: hero.position.x, y: hero.position.y + heroSpeed), duration: 0.5)
         
+     
+        
+        if (hero.position.y + heroSpeed >= size.height){
+            
+            actionMove = SKAction.move(to: CGPoint(x: hero.position.x, y: size.height  - hero.size.height/2), duration: 0.5)
+        }
+        else {
+            
+            actionMove = SKAction.move(to: CGPoint(x: hero.position.x, y: hero.position.y + heroSpeed), duration: 0.5)
+        }
         hero.run(actionMove)
+
     }
     
     
@@ -104,8 +114,16 @@ class GameScene: SKScene {
         var actionMove: SKAction
         
         actionMove = SKAction.move(to: CGPoint(x: hero.position.x, y: hero.position.y - heroSpeed), duration: 0.5)
+
         
-        hero.run(actionMove)
+       if (hero.position.y - heroSpeed <= 0){
+        actionMove = SKAction.move(to:CGPoint(x: hero.position.x, y: hero.size.height/2), duration: 0.5)
+        }
+        
+       else {
+        actionMove = SKAction.move(to: CGPoint(x: hero.position.x, y: hero.position.y - heroSpeed), duration: 0.5)
+        }
+   hero.run(actionMove)
     }
     
     
@@ -114,8 +132,15 @@ class GameScene: SKScene {
         var actionMove: SKAction
         
         actionMove = SKAction.move(to: CGPoint(x: hero.position.x - heroSpeed, y: hero.position.y), duration: 0.5)
-        
-        hero.run(actionMove)
+  
+        if (hero.position.x - heroSpeed <= 0){
+            actionMove = SKAction.move(to: CGPoint(x: hero.size.width/2, y: hero.position.y), duration: 0.5 )
+        }
+            
+        else {
+            actionMove = SKAction.move(to: CGPoint( x: hero.position.x - heroSpeed, y: hero.position.y), duration: 0.5)
+        }
+           hero.run(actionMove)
     }
     
     
@@ -125,7 +150,15 @@ class GameScene: SKScene {
         
         actionMove = SKAction.move(to: CGPoint(x: hero.position.x + heroSpeed, y: hero.position.y), duration: 0.5)
         
-        hero.run(actionMove)
+        
+        if (hero.position.x + heroSpeed >= size.width){
+            actionMove = SKAction.move(to: CGPoint(x: size.width - hero.size.width/2, y: hero.position.y), duration: 0.5 )
+        }
+            
+        else {
+            actionMove = SKAction.move(to: CGPoint( x: hero.position.x + heroSpeed, y: hero.position.y), duration: 0.5)
+    }
+           hero.run(actionMove)
     }
     
 
@@ -162,7 +195,7 @@ class GameScene: SKScene {
             
         }
         
-    }
+        }
     
     
     
@@ -177,8 +210,11 @@ class GameScene: SKScene {
             self.addChild(n)
             
         }
-        
-    }
+        }
+    
+    
+    
+    
     
     
     
@@ -186,8 +222,7 @@ class GameScene: SKScene {
         
         
         
-    }
-    
+        }
     
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -196,9 +231,7 @@ class GameScene: SKScene {
         
     }
     
-    
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
         let bullet = SKSpriteNode ()
@@ -213,8 +246,8 @@ class GameScene: SKScene {
         
         let projectileAction = SKAction.sequence([
             SKAction.repeat(
-                SKAction.move(by: vector, duration: 0.5), count: 10),
-            SKAction.wait(forDuration: 0.5),
+                SKAction.move(by: vector, duration: 0.2), count: 10),
+            SKAction.wait(forDuration: 0.01),
             SKAction.removeFromParent()
             ])
         bullet.run(projectileAction)
@@ -241,4 +274,5 @@ class GameScene: SKScene {
     
 
     
-}
+        }
+
