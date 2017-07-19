@@ -23,6 +23,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     
+    let hero = SKSpriteNode(imageNamed: "Spaceship")
     
     private var label : SKLabelNode?
     
@@ -53,7 +54,18 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
             
         }
+        backgroundColor = SKColor.black
         
+        
+        let xCoord = size.width * 0.5
+        let yCoord = size.height * 0.5
+        
+        hero.size.height = 50
+        hero.size.width = 50
+        
+        hero.position = CGPoint(x: xCoord, y: yCoord)
+        
+        addChild(hero)
         
         
         // Create shape node to use during mouse interaction
@@ -181,6 +193,8 @@ class GameScene: SKScene {
         // Called before each frame is rendered
         
     }
+    
+    
     
 }
 
