@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9420FE5A1F20DAF8004139B4 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420FE591F20DAF8004139B4 /* Enemy.swift */; };
 		947204151F1F970F00E71D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947204141F1F970F00E71D21 /* AppDelegate.swift */; };
 		947204191F1F970F00E71D21 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 947204181F1F970F00E71D21 /* Actions.sks */; };
 		9472041B1F1F970F00E71D21 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9472041A1F1F970F00E71D21 /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9420FE591F20DAF8004139B4 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		947204111F1F970F00E71D21 /* Space Envador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Envador.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		947204141F1F970F00E71D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947204181F1F970F00E71D21 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				947204181F1F970F00E71D21 /* Actions.sks */,
 				9472041A1F1F970F00E71D21 /* GameScene.swift */,
 				9472041C1F1F970F00E71D21 /* GameViewController.swift */,
+				9420FE591F20DAF8004139B4 /* Enemy.swift */,
 				9472041E1F1F970F00E71D21 /* Main.storyboard */,
 				947204211F1F970F00E71D21 /* Assets.xcassets */,
 				947204231F1F970F00E71D21 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9420FE5A1F20DAF8004139B4 /* Enemy.swift in Sources */,
 				9472041B1F1F970F00E71D21 /* GameScene.swift in Sources */,
 				9472041D1F1F970F00E71D21 /* GameViewController.swift in Sources */,
 				947204151F1F970F00E71D21 /* AppDelegate.swift in Sources */,
